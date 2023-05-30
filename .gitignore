@@ -5,3 +5,12 @@ lib
 tests/
 .envrc
 __pycache__
+
+# Environments
+.env
+.venv
+.gudLftEnv
+env/
+venv/
+gudLftEnv/
+ENV/

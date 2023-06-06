@@ -14,7 +14,7 @@
             <li>{{message}}</li>
         {% endfor %}
        </ul>
-    {% endif%}
+    {% else %}
     Points available: {{club['points']}}
     <h3>Competitions:</h3>
     <ul>
@@ -30,6 +30,7 @@
         <hr />
         {% endfor %}
     </ul>
+    {% endif%}
     {%endwith%}
 
 </body>

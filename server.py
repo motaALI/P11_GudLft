@@ -1,6 +1,6 @@
 import json
 from flask import Flask,render_template,request,redirect,flash,url_for
-from services.booking_service_srv import bookingError, check_club_possibility_to_reserve_places
+from services.booking_service_srv import bookingError, check_club_possibility_to_reserve_places, check_reservation_not_in_past
 
 
 
@@ -58,6 +58,7 @@ def purchasePlaces():
     placesRequired = int(request.form['places'])
     try:
         check_club_possibility_to_reserve_places(club, placesRequired)
+        check_reservation_not_in_past(competition['date'])
         competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
         flash('Great-booking complete!')
         return render_template('welcome.html', club=club, competitions=competitions)

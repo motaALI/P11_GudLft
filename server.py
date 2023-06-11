@@ -1,5 +1,7 @@
 import json
 from flask import Flask,render_template,request,redirect,flash,url_for
+from services.booking_service_srv import bookingError, check_club_possibility_to_reserve_places
+
 
 
 def loadClubs():
@@ -54,10 +56,14 @@ def purchasePlaces():
     competition = [c for c in competitions if c['name'] == request.form['competition']][0]
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     placesRequired = int(request.form['places'])
-    competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
-    flash('Great-booking complete!')
-    return render_template('welcome.html', club=club, competitions=competitions)
-
+    try:
+        check_club_possibility_to_reserve_places(club, placesRequired)
+        competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
+        flash('Great-booking complete!')
+        return render_template('welcome.html', club=club, competitions=competitions)
+    except bookingError as error:
+        flash(error)
+        return render_template('welcome.html', club=club, competitions=competitions)
 
 # TODO: Add route for points display
 

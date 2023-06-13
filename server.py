@@ -60,7 +60,13 @@ def purchasePlaces():
         check_club_possibility_to_reserve_places(club, placesRequired)
         check_reservation_not_in_past(competition['date'])
         competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
+        
+        # Deduct the number of points used from the club balance.
+        
+        club['points'] = int(club['points']) - placesRequired
+        club_points_report = f"You have {club['points']} points left."
         flash('Great-booking complete!')
+        flash(club_points_report)
         return render_template('welcome.html', club=club, competitions=competitions)
     except bookingError as error:
         flash(error)

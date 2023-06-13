@@ -73,6 +73,17 @@ def purchasePlaces():
         return render_template('welcome.html', club=club, competitions=competitions)
 
 # TODO: Add route for points display
+@app.route('/clubsPoints/<club>', methods=['POST'])
+def clubsPoints(club):
+    # Find the club by name
+    found_club = next((c for c in clubs if c['name'] == club), None)
+    if not found_club:
+        return "Club not found"
+
+    club_name = found_club['name']
+    club_points = found_club['points']
+    
+    return render_template('welcome.html', club=club, competitions=competitions, club_points=club_points, club_name=club_name)
 
 
 @app.route('/logout')

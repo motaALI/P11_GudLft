@@ -20,7 +20,6 @@ def is_competition_in_present(competition_date: datetime):
     today = datetime.now().date()
     datetime_obj = datetime.strptime(competition_date, '%Y-%m-%d %H:%M:%S')
     date_object = datetime_obj.date()
-    today = date.today()
     if date_object < today:
         return False
     else:
@@ -28,7 +27,6 @@ def is_competition_in_present(competition_date: datetime):
      
 
 def check_reservation_not_in_past(competition_date: datetime):
-    today = datetime.now().date()
     try:
         if not is_competition_in_present(competition_date):
             raise bookingError("You are not able to book a place on a post-dated competition.")

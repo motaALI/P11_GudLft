@@ -21,15 +21,7 @@
     Points available: {{club['points']}}
     <br />
     <br />
-    <form action="{{ url_for('clubsPoints', club=club['name']) }}" method="post">
-        <input type="hidden" name="club" value="{{ club['name'] }}">
-        <button type="submit">Display club report</button>
-    </form>
-    {% if club_name %}
-    <h3>Club Points</h3>
-    <p>Club Name: {{ club_name }}</p>
-    <p>Points: {{ club_points }} </p>
-    {% endif %}
+    <a href="{{url_for('clubsPoints')}}">Display list of all clubs</a>
     <br />
     <h3>Competitions:</h3>
     <ul>

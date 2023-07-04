@@ -1,8 +1,6 @@
 bin
 include
 lib
-.Python
-.envrc
 __pycache__
 
 # Environments

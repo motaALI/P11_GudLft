@@ -61,3 +61,7 @@
 
 <img width="956" alt="Locust_report" src="https://github.com/motaALI/P11_GudLft/assets/44614953/689a02ba-f0eb-4b02-a483-a7e001b89004">
 
+# Pytest-cov reporte:
+<img width="753" alt="ALI ALDOUMA_Motawakil_3_pytest-cov" src="https://github.com/motaALI/P11_GudLft/assets/44614953/8b341dca-4f6b-4841-805e-b07644a003ff">
+
+

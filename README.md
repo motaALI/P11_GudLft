@@ -49,3 +49,15 @@
     We also like to show how well we're testing, so there's a module called 
     [coverage](https://coverage.readthedocs.io/en/coverage-5.1/) you should add to your project.
 
+
+# Unittest report:
+<img width="532" alt="unittest report2" src="https://github.com/motaALI/P11_GudLft/assets/44614953/fc2c01f8-b80c-42b8-9066-63f60a8405ec">
+
+# flake8 report:
+
+<img width="734" alt="flake8Raport" src="https://github.com/motaALI/P11_GudLft/assets/44614953/b7fac396-9f4b-4e83-bf7e-af1b7fb0b4f3">
+
+# Locust reporte:
+
+<img width="956" alt="Locust_report" src="https://github.com/motaALI/P11_GudLft/assets/44614953/689a02ba-f0eb-4b02-a483-a7e001b89004">
+
